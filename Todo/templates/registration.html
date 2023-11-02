@@ -1,0 +1,158 @@
+<html>
+    <head>
+        <style>
+
+            label
+            {
+                text-align: center;
+                
+            }
+            
+            input
+            {
+                size: 3cm;
+                border-radius: 15cm;
+                width: 50%;
+                height: 10%;
+            text-align: center;
+            font-size:15px;
+             
+            }
+            
+            
+            .one
+            {
+                text-align: center;
+                background-color: aliceblue;
+                border: 15cm red;
+                border: 1px solid #f00;
+                margin-left: 10cm;
+                margin-right: 10cm;
+                margin-top: 2cm;
+                padding-bottom: 2cm;
+                padding-top: 2cm;
+            
+            }
+            
+            
+            ul {
+              list-style-type: none;
+              margin: 10;
+              padding-left: 17CM;
+              padding-top: 1cm;
+              overflow: hidden;
+              align-items: center;
+              margin-right: 1cm;
+            
+            
+            }
+            
+            li {
+              float: left;
+            }
+            
+            li a {
+                left: 0cm;
+            background-color: rgb(10, 112, 255);
+              color: rgb(0, 0, 0);
+              padding: 14px 16px;
+              text-decoration: none;
+              font-size: large
+            }
+            
+            /* Change the link color to #111 (black) on hover */
+            li a:hover {
+              background-color: #fc0000;
+            }
+            
+            
+                    </style>
+        <title>New1</title>
+    </head>
+    <body>
+
+
+
+
+        <div style="background-color: rgb(10, 112, 255);">
+
+            <ul>
+                <li><a href="{% url 'login' %}">Home</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+                
+              </ul>
+              
+</div>
+<div class="one">
+    {% if status %}
+    <h2>Registered Successfully</h2>
+    {% endif %}
+
+    <h1>Registration</h1>
+    <label>Enter Name : </label><br>
+    <input type="text" id="name" placeholder="Enter your Name"><br><br>
+    <label>Enter Phone Number : </label> <br> 
+    <input type="text" id="phone" placeholder="Enter your Phone Number"><br><br>
+    <label>Enter Password : </label><br>
+    <input type="text" id="pass" placeholder="Enter Password">   <br><br>
+    <label>ReEnter Password : </label><br>
+    <input type="text" id="pass2" placeholder="ReEnter Password">   <br><br><br>
+    <input type="submit" id="submit1">
+</div>
+
+
+
+
+
+        </div>
+<script>
+
+document.getElementById("submit1").addEventListener("click",function() {
+
+   var name=document.getElementById("name").value;
+   var phone=document.getElementById("phone").value;
+   var pass=document.getElementById("pass").value;
+   var pass1=document.getElementById("pass2").value;
+    
+   if (name == "") {
+                alert("Please enter your name.");
+            } else if (!/^[0-9]{10}$/.test(phone)) {
+                alert("Please enter a valid 10-digit phone number.");
+            } 
+            else if(pass=="")
+            {
+                alert("Please enter password");
+            }
+            else if (pass != pass1) {
+                alert("Passwords do not match.");
+            } 
+            else {
+                const url=`/register/?name=${name}&phone=${phone}&pass=${pass}`;
+                window.location.href = url;
+            }
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>

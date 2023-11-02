@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <style>
+           
+           ul {
+  list-style-type: none;
+  margin: 10;
+  padding-left: 17CM;
+  padding-top: 1cm;
+  overflow: hidden;
+  align-items: center;
+  margin-right: 1cm;
+
+
+}
+
+li {
+  float: left;
+}
+
+li a {
+    left: 0cm;
+background-color: rgb(10, 112, 255);
+  color: rgb(0, 0, 0);
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: large
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #fc0000;
+}
+.one
+{
+    text-align: center;
+    background-color: aliceblue;
+    border: 15cm red;
+    border: 1px solid #f00;
+    margin-left: 10cm;
+    margin-right: 10cm;
+    margin-top: 2cm;
+    padding-bottom: 2cm;
+    padding-top: 2cm;
+
+}
+
+.login
+{
+    margin-top: 1cm;
+    border-radius: 15cm;
+    width: 3cm;
+    height: 1cm;
+    background-color: aqua;
+}
+
+.button1
+{
+    width: 5cm;
+    height: 1cm;
+    font-size: small;
+}
+
+        </style>
+        <title>New1</title>
+    </head>
+    <body>
+        
+
+        <div style="background-color: rgb(10, 112, 255);">
+
+
+            <ul>
+                <li><a href="{% url 'login' %}"><b>Home</b></a></li>
+                <li><a href="{% url 'register' %}"><b>Register</b></a></li>
+              </ul>
+
+            </div>
+            <div class="one">
+    {% if status == 0 %}
+    <h2> Invalid details </h2>
+    {% endif %}
+    <form action="{% url 'login' %}" method="POST">
+    <h1>LOGIN</h1>
+    <P>Enter your UserID : </P> <input type="text" name="ID"  class="button1">
+    <P>Enter your Password : </P> <input type="text" name="Password"  class="button1"><br>
+    <input type="submit"  class="login" >
+</form>
+</div>
+
+
+
+
+
+    </body>
+</html>

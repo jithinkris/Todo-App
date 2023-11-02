@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <style>
+
+
+input
+{
+    width: 7cm;
+    height: 1cm;
+    border-radius: 15px;
+}
+
+#desc
+{
+    width: 7cm;
+    height: 7cm;
+    border-radius: 15px;
+
+}
+
+
+     
+     .one
+     {
+         text-align: center;
+         background-color: aliceblue;
+         border: 15cm red;
+         border: 1px solid #f00;
+         margin-left: 10cm;
+         margin-right: 10cm;
+         margin-top: 2cm;
+         padding-bottom: 2cm;
+         padding-top: 2cm;
+     
+     }
+     
+     
+     
+     
+     
+     
+             ul {
+       list-style-type: none;
+       margin: 10;
+       padding-left: 15CM;
+       padding-top: 1cm;
+       overflow: hidden;
+       align-items: center;
+       margin-right: 1cm;
+     
+     
+     }
+     
+     li {
+       float: left;
+     }
+     
+     li a {
+         left: 0cm;
+     background-color: rgb(255, 5, 5);
+       color: rgb(250, 250, 250);
+       padding: 14px 16px;
+       text-decoration: none;
+       font-size: large
+     }
+     
+     /* Change the link color to #111 (black) on hover */
+     li a:hover {
+       background-color: #090909;
+     }
+     
+     
+ 
+        </style>
+        <title>New1</title>
+    </head>
+    <body>
+
+        <div style="background-color: rgb(10, 112, 255);">
+
+            
+                <ul>
+                    <li><a href="{% url 'UserHome' %}">TODO List</a></li>
+                    <li><a href="{% url 'ADDTODO' %}">ADD TODO</a></li>
+                    <li><a href="{% url 'home' %}">Logout</a></li>
+                  </ul>
+            </div>     
+
+<div class="one">
+    <center>
+    <h1>Create TODO </h1>
+    <form method="GET" action="{% url 'ADDTODO' %}">
+    <P>Title : </P> <input type="text" name="tit" required>
+    <P>Description : </P> <textarea rows="5" cols="30" name="desc" placeholder="Enter Description" id="desc"> </textarea><br>
+    <P>Due Date : </P> <input type="date" name="due" required><br><br><br>
+    <input type="submit" value="SAVE" id="save" size="10%">
+</form>
+</center>
+</div>
+
+
+
+
+
+
+
+    </body>
+</html>
